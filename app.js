@@ -12,133 +12,114 @@ import session from 'express-session'
 import GoogleStrategy from 'passport-google-oauth20'
 import passport from 'passport'
 
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
+
 import dotenv from 'dotenv'
-dotenv.config()
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-/**
- * Permite CORS para cualquier Chrome Extension:
- * origin = chrome-extension://<cualquier-id>
- *
- * Tu fetch solo envía Content-Type: application/json, así que NO hace falta credentials.
- */
-function allowChromeExtensionCors(req, res, next) {
-  const origin = req.headers.origin
-
-  if (origin && origin.startsWith('chrome-extension://')) {
-    res.setHeader('Access-Control-Allow-Origin', origin)
-    res.setHeader('Vary', 'Origin')
-    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS')
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
-  }
-
-  // Preflight
-  if (req.method === 'OPTIONS') {
-    return res.sendStatus(204)
-  }
-
-  next()
-}
+dotenv.config({ path: './.env' })
 
 export const createApp = () => {
   const app = express()
 
-  // ✅ CORS y preflight antes de todo
-  app.use(allowChromeExtensionCors)
-
-  // (opcional) también puedes dejar cors() por si llamas desde web/otros:
-  app.use(
-    cors({
-      origin: (origin, cb) => {
-        if (!origin) return cb(null, true)
-        if (origin.startsWith('chrome-extension://')) return cb(null, true)
-        return cb(null, false)
-      },
-      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-      allowedHeaders: ['Content-Type', 'Authorization'],
-      credentials: false,
-    })
-  )
-
   app.use(json())
+  app.use(cors())
   app.use(compression())
   app.disable('x-powered-by')
 
   app.use(express.static(path.join(__dirname, './static/public')))
+  
   app.set('views', path.join(__dirname, './static/views'))
-  app.set('view engine', 'ejs')
+  app.set("view engine", "ejs")
 
-  app.use(express.urlencoded({ extended: false }))
-  app.use(methodOverride('_method'))
+  // Middlewares
+  // Para recibir los valores por POST
+  app.use(express.urlencoded({extended: false}))
+  app.use(methodOverride('_method')) //posiblemente no lo use
+  app.use(session({
+    secret: 'footmobsecret',
+    resave: true,
+    saveUninitialized: true
+  }))
 
-  // ⚠️ En Vercel serverless no es ideal, pero no rompe tu flujo actual
-  app.use(
-    session({
-      secret: process.env.SESSION_SECRET || 'footmobsecret',
-      resave: true,
-      saveUninitialized: true,
-    })
-  )
-
+  // Middleware para pasar usuario a todas las vistas
   app.use((req, res, next) => {
-    res.locals.user = req.session.user || null
-    next()
-  })
-
+    res.locals.user = req.session.user || null;
+    next();
+  });
+  
+  // Initialize Passport
   app.use(passport.initialize())
 
   passport.use(
-    new GoogleStrategy(
-      {
-        clientID: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL:
-          process.env.GOOGLE_CALLBACK_URL ||
-          'https://www.football-live.it.com/auth/google/footlive',
-      },
-      function (accessToken, refreshToken, profile, done) {
-        done(null, profile)
-      }
-    )
-  )
+    new GoogleStrategy({
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: 'https://www.football-live.it.com/auth/google/footlive', //produccion
+      //callbackURL: '/auth/google/footlive', //local
+    },
+    function(accessToken, refreshToken, profile, done) {
+      done(null, profile)
+    }
+  ))
+  
+  // Serializar usuario
+  passport.serializeUser((user, done) => {
+    done(null, user)
+  })
 
-  passport.serializeUser((user, done) => done(null, user))
-  passport.deserializeUser((user, done) => done(null, user))
+  // Deserializar usuario
+  passport.deserializeUser((user, done) => {
+    done(null, user)
+  })
 
   // Rutas
   app.use(createUserRouter())
 
+  //Routes
   const URL = process.env.URL
   app.use('/footlive', createFootMobRouter({ url: URL }))
+  //app.use('/footlive', createUserRouter())
 
   app.get('/', (req, res) => {
     res.redirect('/footlive')
   })
 
-  // Archivos de texto/xml
+  // Ruta para servir archivos de texto
   app.get('/:filename', (req, res) => {
-    const filename = req.params.filename
-    const filePath = path.join(__dirname, `./${filename}`)
+    const filename = req.params.filename;
+    const filePath = path.join(__dirname, `./${filename}`);
 
+    // Verifica si el archivo existe
     fs.readFile(filePath, 'utf8', (err, data) => {
-      if (err) return res.status(404).send('Not found')
+      if (err) {
+        // Si ocurre un error al leer el archivo, devuelve un error 500
+        res.status(500).send('Error interno del servidor')
+      } else {
+        // Obtener la extensión del archivo
+        const extname = path.extname(filePath);
+        
+        // Establecer el tipo de contenido basado en la extensión del archivo
+        let contentType;
+        if (extname === '.xml') {
+          contentType = 'application/xml'
+        } else if (extname === '.txt') {
+          contentType = 'text/plain'
+        } else {
+          contentType = 'text/plain' // Tipo de contenido predeterminado
+        }
 
-      const extname = path.extname(filePath)
-      let contentType = 'text/plain'
-      if (extname === '.xml') contentType = 'application/xml'
-      if (extname === '.txt') contentType = 'text/plain'
-
-      return res.type(contentType).send(data)
+        // Establecer el tipo de contenido en el encabezado de la respuesta
+        res.type(contentType).send(data)
+      }
     })
   })
 
-  return app
+  const PORT = process.env.PORT ?? 3000
+
+  app.listen(PORT, () => {
+    console.log(`server listening on port http://localhost:${PORT}`)
+  })
 }
 
-// ✅ Vercel handler: NO listen()
-const app = createApp()
-export default function handler(req, res) {
-  return app(req, res)
-}
+createApp()
