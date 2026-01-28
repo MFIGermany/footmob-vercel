@@ -1,4 +1,6 @@
-import { readJSON } from '../utils.js'
+import { createRequire } from 'node:module'
+const require = createRequire(import.meta.url)
+
 import fetch from 'node-fetch'
 import { JSDOM } from 'jsdom'
 import dotenv from 'dotenv'
@@ -7,11 +9,9 @@ import request from 'request'
 import countryIso from 'country-iso-2-to-3'
 
 
-dotenv.config({ path: './.env' })
-
-const leagues = await readJSON('./leagues.json')
-
-const zonesByCountry = await readJSON('./TimeZonesByCountry.json') // seer99
+dotenv.config();
+const leagues = require('../leagues.json')
+const zonesByCountry = require('../TimeZonesByCountry.json')
 
 export class FootMobModel {
   static function
