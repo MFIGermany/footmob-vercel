@@ -1,14 +1,18 @@
 import { createRequire } from 'node:module'
+
 const require = createRequire(import.meta.url)
 
+const leagues = require('../leagues.json')
+const zonesByCountry = require('../TimeZonesByCountry.json')
 import { JSDOM } from 'jsdom'
 import dotenv from 'dotenv'
 import request from 'request'
 import countryIso from 'country-iso-2-to-3'
 
-dotenv.config();
-const leagues = require('../leagues.json')
-const zonesByCountry = require('../TimeZonesByCountry.json')
+dotenv.config({ path: './.env' })
+
+
+// --- helper para promisificar "request" ---
 function requestAsync(options) {
   return new Promise((resolve, reject) => {
     request(options, (error, response, body) => {
