@@ -1,0 +1,7 @@
+body {
+    color: #fff;
+    margin: auto;
+    font-family: Helvetica, Tahoma, Verdana, Arial, sans-serif;
+}
+.navbar a:link{text-decoration:none;color:#fff}
+.navbar a:visited{text-decoration:none;color:#fff}

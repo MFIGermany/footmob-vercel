@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Football Live ⚽ | Noticias de futbol</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Football Live | Noticias de futbol" />
+    <meta name="description" content="Football Live, sitio para ver las principales noticias de la Premier League, Bundesliga, Serie A, LaLiga, Ligue 1, UEFA Champions League, entre otros.">
+    <meta name="keywords" content="Champions, uefa, clubs, real madrid, barcelona, manchester city, liverpool, bayern">
+    <meta name="distribution" content="global" />
+    <meta name="author" content="Foobal Live" />
+    <meta name="referrer" content="always" />
+    <meta name="robots" content="all" />
+    <link rel="icon" href="/img/favicon.ico" type="image/ico">
+	<link rel="canonical" href="https://www.football-live.it.com/footlive/contribution">
+    <link href="/css/header.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/contribution.css" rel="stylesheet" type="text/css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G2193Y7XNZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G2193Y7XNZ');
+</script>
+<body>
+    <%- include('partials/menu', { active: 'contribution' }) %>
+    <div id="container" class="view_news">
+        <div id="left-column">
+            <!-- Código de anuncio AdSense para la columna izquierda -->
+            <div id="ads_left"></div>
+        </div>
+        <div id="center-column">
+            <div class="donation-container">
+                <div class="img-container">
+                    <img src="/img/banner-image.jfif" class="banner-image" data-testid="banner-preview">
+                </div>
+                <br/>
+                <p>Gracias por considerar apoyar nuestra plataforma. Tu donación nos permite cubrir los costos de mantenimiento, logrando una experiencia sin interrupciones y seguir mejorando la calidad y variedad de los canales disponibles. Cada aporte, grande o pequeño, es un paso hacia una experiencia deportiva más accesible y emocionante para todos. ¡Gracias por ser parte de esta comunidad y por ayudarnos a seguir adelante!</p>                
+                <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                    <input type="hidden" name="hosted_button_id" value="2QK6UZ2AACX96" />
+                    <button class="common-preview-component-btn bf-margin-top-24 donate-with-paypal css-dl0cqz-button_base-text_button_lg-branded" data-ppui-info="buttons_7.9.12" onclick="document.forms[0].submit()">
+                        <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-mark-color.svg" style="height: 24px; width: 24px; margin-right: 8px;">
+                        Donar con PayPal
+                    </button>
+                    <img alt="" border="0" src="https://www.paypal.com/en_CL/i/scr/pixel.gif" width="1" height="1" />
+                </form>
+            </div>
+        </div>
+        <div id="right-column">
+            <!-- Código de anuncio AdSense para la columna derecha -->
+            <div id="ads_right"></div>
+        </div>
+    </div>
+    <script>
+        
+    </script>
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js" async></script>
+    <script type="text/javascript">
+        document.getElementById('aclib').addEventListener('load', function() {
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_left'
+            });
+
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_right'
+            });
+        });
+    </script>
+</body>
+</html>

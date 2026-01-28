@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Football Live ⚽ | Extensión de Chrome: Football Live</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descarga Football Live, una extensión de Chrome que te permite estar al tanto de los últimos resultados de tus ligas favoritas. Mejora tu experiencia de navegación con nuestras herramientas innovadoras.">
+    <meta name="keywords" content="Extensión de Chrome, Futbol, Futbol en Vivo, champions, uefa, clubs, real madrid, barcelona, manchester city, liverpool, bayern">
+    <link rel="icon" href="/img/favicon.ico" type="image/ico">
+	<link rel="canonical" href="https://www.football-live.it.com/footlive/extension">
+    <link href="/css/header.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/news.css" rel="stylesheet" type="text/css">
+    <link href="/css/extension.css" rel="stylesheet" type="text/css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G2193Y7XNZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G2193Y7XNZ');
+</script>
+<body>
+    <%- include('partials/menu', { active: 'extension' }) %>
+    <div id="container" class="view_matches">        
+        <div id="left-column">
+            <!-- Anuncios de visualización -->
+            <a href="https://chromewebstore.google.com/detail/football-live/pdehjnikdhecaajakdgdoflodnbedfim" target="_blank">
+                <img id="mini" src="../img/miniatura.webp" alt="mini_footlive" style="width:100%;"/>
+            </a>
+            <!-- Anuncios de visualización -->
+            <div id="ads_left"></div>
+        </div>
+        <div id="center-column">
+            <div class="aboutContainer">                
+                <section id="description">
+                    <a class="KgGEHd" target="_blank" href="https://chromewebstore.google.com/detail/football-live/pdehjnikdhecaajakdgdoflodnbedfim">
+                        <img src="https://lh3.googleusercontent.com/PRXWq47aA9Gu40_SJxEFrHyfawi4lE0ce16p-wwFy6_sXBs7d1Q2KXTseV7RDwJsGT_R6xpMfTW2bY3dQZDbe6M2TQ=s60" srcset="https://lh3.googleusercontent.com/PRXWq47aA9Gu40_SJxEFrHyfawi4lE0ce16p-wwFy6_sXBs7d1Q2KXTseV7RDwJsGT_R6xpMfTW2bY3dQZDbe6M2TQ=s120 2x" alt="Imagen del logotipo del elemento para Football Live" class="rBxtY" jscontroller="OhgRI" jsaction="error:LILo6;">
+                        <h1 class="Pa2dE">Football Live</h1>
+                    </a>
+                    <p id="title_description">Football Live es una extensión de Chrome que te permite estar al tanto de los últimos resultados de tus ligas favoritas. Con una interfaz intuitiva y fácil de usar, puedes mantenerte al día y seguir cada momento del deporte que amamos. Mejora tu experiencia de navegación con nuestras herramientas innovadoras, accede fácilmente a los partidos en vivo, calendarios, noticias y más, todo desde la comodidad de un click.</p>
+                </section>
+                <section id="features">
+                    <h2 id="feature">Características</h2>
+                    <ul>
+                        <li><b id="result">Resultados en tiempo real:</b> <span id="sp_result">Obtén actualizaciones instantáneas sobre los marcadores de los partidos mientras ocurren.</span></li>
+                        <li><b id="customize">Personalización:</b> <span id="sp_customize">Selecciona tus ligas favoritas y mantente informado sobre sus partidos en vivo.</span></li>
+                        <li><b id="interface">Interfaz intuitiva:</b> <span id="sp_interface">Navega fácilmente por la extensión y encuentra lo que necesitas en segundos.</span></li>
+                    </ul>
+                </section>
+                <section id="team">
+                    <h2 id="title_team">Equipo</h2>
+                    <p><b id="developer">Desarrollador:</b> Yoenry Vanega Hechavarría</p>
+                    <p><b id="contact">Contacto:</b> yvanega@gmail.com</p>
+                </section>
+                <section id="versions">
+                    <p><b id="version">Versión actual:</b> 2.1.2</p>
+                    <p><b id="date">Fecha de lanzamiento:</b> 04-04-2024</p>
+                </section>
+                <a href="https://chromewebstore.google.com/detail/football-live/pdehjnikdhecaajakdgdoflodnbedfim" target="_blank" class="btn btn-info btn-sm fs-sm rounded order-lg-3 d-none d-lg-inline-flex">Descargar Extensión</a>
+            </div>
+        </div>
+        <div id="right-column">
+            <%- include('partials/column-right') %>
+            <!-- Anuncios de visualización -->            
+            <div id="ads_right"></div>
+        </div>
+    </div>
+    <script>
+        //Slides
+        document.addEventListener('DOMContentLoaded', function() {            
+            const slides = document.querySelector('.slides');
+            const images = document.querySelectorAll('.slides img');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+
+            let index = 0;
+
+            function showSlide(i) {
+                if (i >= images.length) {
+                    index = 0;
+                } else if (i < 0) {
+                    index = images.length - 1;
+                } else {
+                    index = i;
+                }
+                slides.style.transform = `translateX(${-index * 100}%)`;
+            }
+
+            prevButton.addEventListener('click', function() {
+                showSlide(index - 1);
+            });
+
+            nextButton.addEventListener('click', function() {
+                showSlide(index + 1);
+            });
+
+            // Auto play functionality (optional)
+            setInterval(function() {
+                showSlide(index + 1);
+            }, 4000); // Change image every 4 seconds
+        });
+    </script>
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js" async></script>
+    <script type="text/javascript">
+        document.getElementById('aclib').addEventListener('load', function() {
+            console.log('load aclib');
+            aclib.runAutoTag({
+                zoneId: 'bjpdg8rj4a',
+            });
+
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_left'
+            });
+
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_right'
+            });
+        });
+    </script>
+</body>
+</html>

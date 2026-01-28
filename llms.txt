@@ -1,0 +1,21 @@
+# football-live.it.com (Footlive)
+
+Sitio de canales de fútbol y transmisiones en vivo, con noticias, aplicaciones como nuestra extensión para navegador y contribuciones de usuarios.
+
+Secciones principales:
+- Inicio: https://www.football-live.it.com/footlive
+- Noticias: https://www.football-live.it.com/footlive/noticias
+- Nuestra extension: https://www.football-live.it.com/footlive/extension
+- Contribucion: https://www.football-live.it.com/footlive/contribucion
+- Gana Monero: https://www.football-live.it.com/footlive/ganar-monero
+- Politica de privacidad: https://www.football-live.it.com/footlive/politica-privacidad
+
+Politica para IA / LLMs:
+User-agent: *
+Allow: /footlive
+Disallow: /footlive/admin/
+Require-Attribution: true
+Commercial-Use: allowed
+Disallow-Training: false
+Policy: https://www.football-live.it.com/footlive/politica-privacidad
+Contact: yvanega@gmail.com

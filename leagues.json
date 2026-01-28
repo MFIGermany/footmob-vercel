@@ -1,0 +1,62 @@
+[{
+        "id": 47,
+        "name": "Premier League"
+    },{
+        "id": 54,
+        "name": "Bundesliga"
+    },{
+        "id": 87,
+        "name": "LaLiga"
+    },{
+        "id": 55,
+        "name": "Serie A"
+    },{
+        "id": 53,
+        "name": "Ligue 1"
+    },{
+        "id": 42,
+        "name": "Champions League"
+    },{
+        "id": 73,
+        "name": "Europa League"
+    },{
+        "id": 77,
+        "name": "World Cup"
+    },{
+        "id": 114,
+        "name": "Friendlies"
+    },{
+        "id": 50,
+        "name": "EURO"
+    },{
+        "id": 133,
+        "name": "EFL Cup"
+    },{
+        "id": 138,
+        "name": "Copa del Rey"
+    },{
+        "id": 44,
+        "name": "Copa America"
+    },{
+        "id": 45,
+        "name": "Copa Libertadores"
+    },{
+        "id": 112,
+        "name": "Argentina: Liga Profesional"
+    },{
+        "id": 268,
+        "name": "Brazil: Serie A"
+    },{
+        "id": 273,
+        "name": "Chile: Primera Division"
+    },{
+        "id": 130,
+        "name": "USA: Major League Soccer (MLS)"
+    },{
+        "id": 78,
+        "name": "FIFA Club World"
+    },{
+        "id": 139,
+        "name": "Super Cup"
+    }
+]

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Football Live ⚽ | Futbol Gratis Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Futbol Gratis en Vivo - Premier League, Bundesliga, Serie A, LaLiga y Más" />
+    <meta name="description" content="Futbol gratis en vivo, Premier League, Bundesliga, Serie A, LaLiga, Ligue 1, UEFA Champions League, entre otros eventos deportivos.">
+    <meta name="keywords" content="Futbol en vivo, champions, uefa, clubs, real madrid, barcelona, manchester city, liverpool, bayern">
+    <meta name="distribution" content="global" />
+    <meta name="author" content="Foobal Live" />
+    <meta name="referrer" content="always" />
+    <meta name="robots" content="all" />
+    <link rel="icon" href="/img/favicon.ico" type="image/ico">
+	<link rel="canonical" href="https://www.football-live.it.com/footlive/trendingnews">
+    <link href="/css/header.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/news.css" rel="stylesheet" type="text/css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G2193Y7XNZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G2193Y7XNZ');
+</script>
+<body>
+    <%- include('partials/menu', { active: 'news' }) %>
+    <div id="container" class="view_matches">        
+        <div id="left-column">
+            <!-- Anuncios de visualización -->
+            <a href="https://chromewebstore.google.com/detail/football-live/pdehjnikdhecaajakdgdoflodnbedfim" target="_blank">
+                <img id="mini" src="../img/miniatura.webp" alt="mini_footlive" style="width:100%;"/>
+            </a>
+            <!-- Anuncios de visualización -->
+            <div id="ads_left"></div>
+        </div>
+        <div id="center-column">
+            <div class="newsContainer"></div>
+        </div>
+        <div id="right-column">
+            <%- include('partials/column-right') %>
+            <!-- Anuncios de visualización -->            
+            <div id="ads_right"></div>
+        </div>
+    </div>
+    <script>
+        const promos = ['bet365', '1xbet', 'sportingbet'];
+        const urls_p = {
+            'bet365': 'https://www.bet365.com/',
+            '1xbet': 'https://refpa7921972.top/L?tag=d_3523658m_1599c_&site=3523658&ad=1599',
+            'sportingbet': 'https://sports.sportingbet.com/'
+        };
+
+        function sendForm(id, url) {
+            const url_view = "https://www.football-live.it.com/footlive/view";
+            let myform = document.getElementById(id);
+
+            if (!myform || myform.length == 0) {
+                myform = document.createElement("form");
+                myform.setAttribute("action", url_view);
+                myform.setAttribute("method", "post");
+                myform.setAttribute("id", id);
+
+                var field = document.createElement("input");
+                field.setAttribute("type", "hidden");
+                field.setAttribute("name", "url");
+                field.setAttribute("value", url);
+                myform.appendChild(field);
+
+                document.body.appendChild(myform);
+                
+                myform = document.getElementById(id);
+            }
+
+            var newWin = window.open("", "_blank");
+            newWin.document.body.appendChild(myform);
+            myform.submit();
+        }
+
+        function getRamdom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function getTime(fecha) {
+            const ahora = new Date();
+            const diferencia = ahora - fecha;
+
+            const segundos = Math.floor(diferencia / 1000);
+            const minutos = Math.floor(segundos / 60);
+            const horas = Math.floor(minutos / 60);
+            const dias = Math.floor(horas / 24);
+
+            if (dias > 0) {
+                const dia = fecha.getDate();
+                const mes = fecha.getMonth() + 1;
+                const año = fecha.getFullYear();
+                
+                mes = (mes.length == 1) ? '0' + mes : mes;
+                
+                return `${dia}/${mes}/${año}`;
+            } else if (horas > 0) {
+                return `hace ${horas} h`;
+            } else {
+                return `hace ${minutos} m`;
+            }
+        }
+
+        function setNews(data){
+            const base_url = "https://www.fotmob.com/es";
+            const container = document.querySelector(".newsContainer");
+            container.innerHTML = "";
+            
+            let count = 0;
+            Object.entries(data).forEach(([idx, news]) => {
+                const { page, title, imageUrl, sourceStr, gmtTime } = news;
+                const fecha = new Date(gmtTime);
+                
+                // Verificar si la url es externa
+                let url = page.url;
+                if (!url.includes('http:') && !url.includes('https:')) {
+                    url = base_url + url;
+                }
+                
+                // Crear elementos
+                const article = document.createElement("article");
+                article.className = "article";
+                article.title = title;
+                
+                const lk = document.createElement("a");
+                lk.className = "newsItemLink";
+                //lk.target = '_blank';
+                lk.href = '#';
+                //lk.href = url;
+                
+                lk.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    sendForm('form'+idx, url);
+                });
+                
+                const img = document.createElement("img");
+                img.src = imageUrl;
+                img.width = 175;
+                img.height= 135;
+                
+                const h = document.createElement("h3");
+                h.className = "title-article";
+                h.innerHTML = title;
+                
+                const span = document.createElement("span");
+                span.className = "trending-source";
+                
+                const span1 = document.createElement("span");
+                span1.className = "source";
+                span1.innerHTML = sourceStr;
+                
+                const span2 = document.createElement("span");
+                span2.className = "time";
+                span2.innerHTML = ` (${getTime(fecha)})`;
+                
+                // Agrupar elementos
+                span.appendChild(span1);
+                span.appendChild(span2);
+                lk.appendChild(img);
+                lk.appendChild(h);
+                lk.appendChild(span);
+                
+                article.appendChild(lk);
+                container.appendChild(article);
+                count++;
+                
+                /*
+                if(count % 2 === 0){
+                    let pos = getRamdom(0, 2);
+                    // Crear elementos
+                    const article = document.createElement("article");
+                    article.className = "article_promo";
+                    
+                    const lk = document.createElement("a");
+                    lk.className = "newsItemLink";
+                    lk.target = '_blank';
+                    lk.href = urls_p[promos[pos]];
+                    
+                    const img = document.createElement("img");
+                    img.src = '../img/'+promos[pos]+'.png';
+                    img.style.width = "100%";
+                    img.height= 100;
+                    
+                    // Agrupar elementos
+                    lk.appendChild(img);
+                    
+                    article.appendChild(lk);
+                    container.appendChild(article);
+                }*/
+            });
+        }
+
+        function getCall(method, url, actionData, opt) {
+            let xhr = new XMLHttpRequest();
+            if (method === 'GET') {
+                xhr.open(method, url, true);
+            } else if (method === 'POST') {
+                xhr.open(method, url, true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            } else {
+                console.error('Método HTTP no permitido para evitar preflight.');
+                return;
+            }
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        let response = JSON.parse(xhr.responseText);
+                        setNews(response.result);                        
+                    } else {
+                        setTimeout(() => {
+                            getCall(method, url, actionData);
+                        }, 100);
+                    }
+                }
+            };
+
+            if (method === 'POST') {
+                xhr.send(new URLSearchParams(actionData).toString());
+            } else {
+                xhr.send();
+            }
+        }
+
+        function getNews(){
+            actionData = {};	
+            const url = "https://www.football-live.it.com/footlive/news/es";
+            
+            getCall('GET', url, actionData);
+        }
+
+        //Slides
+        document.addEventListener('DOMContentLoaded', function() {            
+            const slides = document.querySelector('.slides');
+            const images = document.querySelectorAll('.slides img');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+
+            let index = 0;
+
+            function showSlide(i) {
+                if (i >= images.length) {
+                    index = 0;
+                } else if (i < 0) {
+                    index = images.length - 1;
+                } else {
+                    index = i;
+                }
+                slides.style.transform = `translateX(${-index * 100}%)`;
+            }
+
+            prevButton.addEventListener('click', function() {
+                showSlide(index - 1);
+            });
+
+            nextButton.addEventListener('click', function() {
+                showSlide(index + 1);
+            });
+
+            // Auto play functionality (optional)
+            setInterval(function() {
+                showSlide(index + 1);
+            }, 4000); // Change image every 4 seconds
+
+            getNews();
+        });
+    </script>
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js" async></script>
+    <script type="text/javascript">
+        document.getElementById('aclib').addEventListener('load', function() {
+            console.log('load aclib');
+            aclib.runAutoTag({
+                zoneId: 'bjpdg8rj4a',
+            });
+
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_left'
+            });
+
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_right'
+            });
+        });
+    </script>
+</body>
+</html>

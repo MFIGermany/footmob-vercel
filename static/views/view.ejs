@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Football Live ⚽ | Noticias de futbol</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Football Live | Noticias de futbol" />
+    <meta name="description" content="Football Live, sitio para ver las principales noticias de la Premier League, Bundesliga, Serie A, LaLiga, Ligue 1, UEFA Champions League, entre otros.">
+    <meta name="keywords" content="Champions, uefa, clubs, real madrid, barcelona, manchester city, liverpool, bayern">
+    <meta name="distribution" content="global" />
+    <meta name="author" content="Foobal Live" />
+    <meta name="referrer" content="always" />
+    <meta name="robots" content="all" />
+    <link rel="icon" href="/img/favicon.ico" type="image/ico">
+    <link rel="canonical" href="https://www.football-live.it.com">
+    <link href="/css/header.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/news.css" rel="stylesheet" type="text/css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G2193Y7XNZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G2193Y7XNZ');
+</script>
+<body>
+    <%- include('partials/menu', { active: 'news' }) %>
+    <div id="container" class="view_news">
+        <div id="left-column">
+            <!-- Código de anuncio AdSense para la columna izquierda -->
+            <div id="ads_left"></div>
+        </div>
+        <div id="center-column">
+            <!-- iframe para cargar la página en el centro -->
+            <!--<iframe id="myIframe" src="https://as.com/futbol/primera/palo-para-el-barcelona-dest-se-rompe-el-cruzado-n/"></iframe>-->
+            <iframe id="myIframe" src="<%= data.url %>"></iframe>
+        </div>
+        <div id="right-column">
+            <!-- Código de anuncio AdSense para la columna derecha -->
+            <div id="ads_right"></div>
+        </div>
+    </div>
+    <script>
+        function changeIframe(element) {
+            // Obtener referencia al iframe
+            var iframe = document.getElementById('myIframe');
+    
+            // Cambiar la URL del iframe
+            var url = element.getAttribute('rel');
+            iframe.src = url;
+    
+            // Activar el elemento clicado y desactivar otros elementos activos
+            var pagination = document.getElementById('pagination');
+            var links = pagination.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].classList.remove('active');
+            }
+            element.classList.add('active');
+        }
+    
+        // Manejar evento de carga del iframe
+        var iframe = document.getElementById('myIframe');
+        iframe.onload = function() {
+            setTimeout(function() {
+                var url = '<%= data.url %>';
+                
+                console.log(url);
+                if (url.includes('as.com') || url.includes('fotmob.com') || url.includes('mundodeportivo.com')) {
+                    window.location.href = '<%= data.url %>';
+                }
+            }, 100);
+        };
+    </script>
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js" async></script>
+    <script type="text/javascript">
+        document.getElementById('aclib').addEventListener('load', function() {
+            console.log('load aclib');
+            aclib.runAutoTag({
+                zoneId: 'bjpdg8rj4a',
+            });
+
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_left'
+            });
+
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_right'
+            });
+        });
+    </script>
+</body>
+</html>

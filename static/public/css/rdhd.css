@@ -1,0 +1,1272 @@
+/*SOFASCORE.COM*/
+.TUR > a:before {
+    background-image: url(//partidosenvivo.net/flags/tr.webp);
+}
+
+.ENG > a:before {
+    background-image: url(//partidosenvivo.net/flags/en.webp);
+}
+
+.ALE > a:before {
+    background-image: url(//partidosenvivo.net/flags/de.webp);
+}
+
+.FRA > a:before {
+    background-image: url(//partidosenvivo.net/flags/fr.webp);
+}
+
+.HOL > a:before {
+    background-image: url(//partidosenvivo.net/flags/nl.webp);
+}
+
+.POR > a:before {
+    background-image: url(//partidosenvivo.net/flags/pt.webp);
+}
+
+.MEX > a:before {
+    background-image: url(//partidosenvivo.net/flags/mx.png);
+}
+
+.ES > a:before {
+    background-image: url(//partidosenvivo.net/flags/es.png);
+}
+
+.IT > a:before {
+    background-image: url(//partidosenvivo.net/flags/it.png);
+}
+
+.BEL > a:before {
+    background-image: url(//partidosenvivo.net/flags/be.webp);
+}
+
+.COSTARICA > a:before {
+    background-image: url(//partidosenvivo.net/flags/cr.webp);
+}
+
+.ESC > a:before {
+    background-image: url(//partidosenvivo.net/flags/sx.webp);
+}
+
+.BOL > a:before {
+    background-image: url(//partidosenvivo.net/flags/bo.png);
+}
+
+.USA > a:before {
+    background-image: url(//partidosenvivo.net/flags/us.png);
+}
+
+.FUT > a:before {
+    background-image: url(//partidosenvivo.net/flags/international.webp);
+}
+
+.COL > a:before {
+    background-image: url(//partidosenvivo.net/flags/co.webp);
+}
+
+.ATP > a:before {
+    background-image: url(//partidosenvivo.net/flags/atp.webp);
+}
+
+.PARAG > a:before {
+    background-image: url(//partidosenvivo.net/flags/py.webp);
+}
+
+.AR > a:before {
+    background-image: url(//partidosenvivo.net/flags/ar.webp);
+}
+
+.PE > a:before {
+    background-image: url(//partidosenvivo.net/flags/pe.webp);
+}
+
+.PY > a:before {
+    background-image: url(//partidosenvivo.net/flags/py.webp);
+}
+
+.RUGBY > a:before {
+    background-image: url(//partidosenvivo.net/flags/rugby-union.webp);
+}
+
+.URU > a:before {
+    background-image: url(//partidosenvivo.net/flags/uru.webp);
+}
+
+.BRA > a:before {
+    background-image: url(//partidosenvivo.net/flags/br.webp);
+}
+
+.VEN > a:before {
+    background-image: url(//partidosenvivo.net/flags/ven.webp);
+}
+
+.ARA > a:before {
+    background-image: url(//partidosenvivo.net/flags/ara.webp);
+}
+
+.CH > a:before {
+    background-image: url(//partidosenvivo.net/flags/ch.webp);
+}
+
+.CHA > a:before {
+    background-image: url(//partidosenvivo.net/flags/chaa.png);
+}
+
+.ECUA > a:before {
+    background-image: url(//partidosenvivo.net/flags/ec.webp);
+}
+
+.MOTOGP > a:before {
+    background-image: url(//partidosenvivo.net/flags/motogp.webp);
+}
+
+.MOTO2 > a:before {
+    background-image: url(//partidosenvivo.net/flags/moto2.webp);
+}
+
+.MOTO3 > a:before {
+    background-image: url(//partidosenvivo.net/flags/moto3.webp);
+}
+
+.INDYCAR > a:before {
+    background-image: url(//partidosenvivo.net/flags/indycar.webp);
+}
+
+.WTA > a:before {
+    background-image: url(//partidosenvivo.net/flags/wta.webp);
+}
+
+.GRE > a:before {
+    background-image: url(//partidosenvivo.net/flags/gr.png);
+}
+
+.GOLF > a:before {
+    background-image: url(//partidosenvivo.net/flags/golf.svg);
+}
+
+.UCI > a:before {
+    background-image: url(//partidosenvivo.net/flags/uci.png);
+}
+
+.PADEL > a:before {
+    background-image: url(//partidosenvivo.net/flags/padel.jpg);
+}
+
+.HN > a:before {
+    background-image: url(//partidosenvivo.net/flags/hn.png);
+}
+
+.GT > a:before {
+    background-image: url(//partidosenvivo.net/flags/gt.png);
+}
+
+/* Ajustes Personalizados*/
+.menu > li.NHL > a:before {
+    background-image: url(//partidosenvivo.net/flags/nhl.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 1em;
+    width: 1.7em;
+    position: absolute;
+    left: 44px;
+    top: 50%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.NBA > a:before {
+    background-image: url(//partidosenvivo.net/flags/nba.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 1em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 50%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.VNL > a:before {
+    background-image: url(//partidosenvivo.net/flags/vnl.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 1em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 50%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.WWE > a:before {
+    background-image: url(//partidosenvivo.net/flags/wwe.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.69em;
+    width: 1.6em;
+    position: absolute;
+    left: 51px;
+    top: 63%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.BOX > a:before {
+    background-image: url(//partidosenvivo.net/flags/BOXEO.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.69em;
+    width: 1.6em;
+    position: absolute;
+    left: 46px;
+    top: 63%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.AFCCUP > a:before {
+    background-image: url(//partidosenvivo.net/flags/afccup.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 55%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.AFCCHA > a:before {
+    background-image: url(//partidosenvivo.net/flags/afccha.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 55%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.BKFC > a:before {
+    background-image: url(//partidosenvivo.net/flags/bkfc.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 55%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.EUROLEAGUEBASKET > a:before {
+    background-image: url(//partidosenvivo.net/flags/euroleaguebasket.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 55%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.LMB > a:before {
+    background-image: url(//partidosenvivo.net/flags/lmb.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 55%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.HANDBALL > a:before {
+    background-image: url(//partidosenvivo.net/flags/handball.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 55%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.ENDESA > a:before {
+    background-image: url(//partidosenvivo.net/flags/endesa.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 55%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.NBB > a:before {
+    background-image: url(//partidosenvivo.net/flags/NBB.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 55%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.UFC > a:before {
+    background-image: url(//partidosenvivo.net/flags/UFC.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 55%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.NFL > a:before {
+    background-image: url(//partidosenvivo.net/flags/nfl.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 55%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.UEFA_NATIONS > a:before {
+    background-image: url(//partidosenvivo.net/flags/nationsleague.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 55%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.EURO_COPA > a:before {
+    background-image: url(//partidosenvivo.net/flags/eurocopa.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 55%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.COPA_AMERICA > a:before {
+    background-image: url(//partidosenvivo.net/flags/copa_america.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1.7em;
+    position: absolute;
+    left: 45px;
+    top: 55%;
+    margin: -.5em 0 0;
+}
+
+.menu > li.AEW > a:before {
+    background-image: url(//partidosenvivo.net/flags/aewusa.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 65px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.AFR > a:before {
+    background-image: url(//partidosenvivo.net/flags/afr.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.FIFA > a:before {
+    background-image: url(//partidosenvivo.net/flags/fifa.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.COSQUIN > a:before {
+    background-image: url(//partidosenvivo.net/flags/cosquin.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 34px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.PREOLIMPICO > a:before {
+    background-image: url(//partidosenvivo.net/flags/preolimpico.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.LIB > a:before {
+    background-image: url(//partidosenvivo.net/flags/lib.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.UYL > a:before {
+    background-image: url(//partidosenvivo.net/flags/uyl.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.LCC > a:before {
+    background-image: url(//partidosenvivo.net/flags/concacafligad.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.CONCACAF-F > a:before {
+    background-image: url(//partidosenvivo.net/flags/concacaf-f.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.SERIECARIBE > a:before {
+    background-image: url(//partidosenvivo.net/flags/seriecaribe.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.CICLISMO > a:before {
+    background-image: url(//partidosenvivo.net/flags/ciclismo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.FUTSAL-COPA > a:before {
+    background-image: url(//partidosenvivo.net/flags/futsal.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.NCAA > a:before {
+    background-image: url(//partidosenvivo.net/flags/ncaa.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.UCL > a:before {
+    background-image: url(//partidosenvivo.net/flags/conferecen.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 0.6em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.UE > a:before {
+    background-image: url(//partidosenvivo.net/flags/uelogo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.MFP > a:before {
+    background-image: url(//partidosenvivo.net/flags/MFP.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.GOLDCUP > a:before {
+    background-image: url(//partidosenvivo.net/flags/goldcup.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.RECOPA-SUD > a:before {
+    background-image: url(//partidosenvivo.net/flags/sud}.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 36px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 63px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.FIBAAMERICA > a:before {
+    background-image: url(//partidosenvivo.net/flags/fiba.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.EUROBASKET > a:before {
+    background-image: url(//partidosenvivo.net/flags/eurobasket1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.OLIMPICOS > a:before {
+    background-image: url(//partidosenvivo.net/flags/olimpicos2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.8em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 60%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.ELIMINATORIAS_CONMEBOL > a:before {
+    background-image: url(//partidosenvivo.net/flags/sudamerica.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.MLB > a:before {
+    background-image: url(//partidosenvivo.net/flags/mlb.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.NCAAMARCH > a:before {
+    background-image: url(//partidosenvivo.net/flags/ncaamarchusa.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.SUD > a:before {
+    background-image: url(//partidosenvivo.net/flags/sud.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.BASKET > a:before {
+    background-image: url(//partidosenvivo.net/flags/basket.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.NATIONS-F > a:before {
+    background-image: url(//partidosenvivo.net/flags/nationsfemenil.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.F2 > a:before {
+    background-image: url(//partidosenvivo.net/flags/f2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.F3 > a:before {
+    background-image: url(//partidosenvivo.net/flags/f3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.F1 > a:before {
+    background-image: url(//partidosenvivo.net/flags/f1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.LEAGUESCUP > a:before {
+    background-image: url(//partidosenvivo.net/flags/leaguescup.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.OSCARS > a:before {
+    background-image: url(//partidosenvivo.net/flags/oscars.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.CONCACAFLIGAD > a:before {
+    background-image: url(//partidosenvivo.net/flags/CONCACAFLIG.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.EUROELIMINATORIAS > a:before {
+    background-image: url(//partidosenvivo.net/flags/eliminatoriaseuro.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.MMA > a:before {
+    background-image: url(//partidosenvivo.net/flags/mma.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.WNBA > a:before {
+    background-image: url(//partidosenvivo.net/flags/wnba1.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+.menu > li.UEFA_SUPERCOPA > a:before {
+    background-image: url(//partidosenvivo.net/flags/uefasupercopa.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 40px;
+    height: 0.9em;
+    width: 1em;
+    position: absolute;
+    left: 61px;
+    top: 55%;
+    margin: -0.5em 0 0;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 70%;
+    }
+
+    .menu > li > a:before {
+        height: 0.91em;
+        width: 0.50em;
+    }
+
+    .menu > li.NHL > a:before {
+        height: 1.0em;
+        width: 0.7em;
+        left: 46px;
+    }
+
+    .menu > li.WWE > a:before {
+        height: 1.0em;
+        width: 0.6em;
+        left: 45px;
+        top: 51%;
+    }
+
+    .menu > li.NBA > a:before {
+        height: 1.0em;
+        width: 0.7em;
+    }
+
+    .menu > li.VNL > a:before {
+        height: 1.0em;
+        width: 0.7em;
+    }
+
+    .menu > li.AFCCUP > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.BKFC > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.HANDBALL > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.UFC > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.ENDESA > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.NBB > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.CICLISMO > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.NFL > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.CONCACAF-F > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.FUTSAL-COPA > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.SERIECARIBE > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.AEW > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.AFR > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.FIFA > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.CONCACAFLIGAD > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.LMB > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.NCAA > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.BOX > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 45px;
+    }
+
+    .menu > li.PREOLIMPICO > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.LIB > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.EURO_COPA > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.COPA_AMERICA > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.UYL > a:before {
+        height: 0.95em;
+        width: 0.6em;
+        left: 48px;
+    }
+
+    .menu > li.LCC > a:before {
+        height: 0.95em;
+        width: 0.71em;
+        left: 46px;
+    }
+
+    .menu > li.UEFA_NATIONS > a:before {
+        height: 0.95em;
+        width: 0.71em;
+        left: 46px;
+    }
+
+    .menu > li.COSQUIN > a:before {
+        height: 0.95em;
+        width: 0.51em;
+        left: 49px;
+    }
+
+    .menu > li.AFCCHA > a:before {
+        height: 0.95em;
+        width: 0.71em;
+        left: 46px;
+    }
+
+    .menu > li.UE > a:before {
+        height: 0.95em;
+        width: 0.42em;
+        left: 51px;
+    }
+
+    .menu > li.UCL > a:before {
+        height: 0.95em;
+        width: 0.42em;
+        left: 51px;
+    }
+
+    .menu > li.MFP > a:before {
+        height: 0.95em;
+        width: 0.71em;
+        left: 46px;
+    }
+
+    .menu > li.GOLDCUP > a:before {
+        height: 0.95em;
+        width: 0.71em;
+        left: 46px;
+    }
+
+    .menu > li.FIBAAMERICA > a:before {
+        height: 0.95em;
+        width: 0.78em;
+        left: 41px;
+    }
+
+    .menu > li.EUROBASKET > a:before {
+        height: 0.95em;
+        width: 0.78em;
+        left: 41px;
+    }
+
+    .menu > li.ELIMINATORIAS_CONMEBOL > a:before {
+        height: 0.95em;
+        width: 0.78em;
+        left: 41px;
+    }
+
+    .menu > li.LEAGUESCUP > a:before {
+        height: 0.95em;
+        width: 0.60em;
+        left: 46px;
+    }
+
+    .menu > li.OSCARS > a:before {
+        height: 0.95em;
+        width: 0.28em;
+        left: 53px;
+    }
+
+    .menu > li.OLIMPICOS > a:before {
+        height: 0.52em;
+        width: 0.78em;
+        left: 42px;
+        top: 23px;
+    }
+
+    .menu > li.RECOPA-SUD > a:before {
+        height: 0.95em;
+        width: 0.78em;
+        left: 44px;
+    }
+
+    .menu > li.NATIONS-F > a:before {
+        height: 0.95em;
+        width: 0.78em;
+        left: 44px;
+    }
+
+    .menu > li.F2 > a:before {
+        height: 0.95em;
+        width: 0.62em;
+        left: 44px;
+    }
+
+    .menu > li.F3 > a:before {
+        height: 0.95em;
+        width: 0.62em;
+        left: 44px;
+    }
+
+    .menu > li.SUD > a:before {
+        height: 0.95em;
+        width: 0.56em;
+        left: 46px;
+    }
+
+    .menu > li.BASKETCHA > a:before {
+        height: 0.95em;
+        width: 0.56em;
+        left: 46px;
+    }
+
+    .menu > li.F1 > a:before {
+        height: 0.95em;
+        width: 0.62em;
+        left: 44px;
+    }
+
+    .menu > li.MLB > a:before {
+        height: 0.95em;
+        width: 0.56em;
+        left: 46px;
+    }
+
+    .menu > li.NCAAMARCH > a:before {
+        height: 0.95em;
+        width: 0.56em;
+        left: 46px;
+    }
+
+    .menu > li.EUROELIMINATORIAS > a:before {
+        height: 0.95em;
+        width: 0.56em;
+        left: 46px;
+    }
+
+    .menu > li.EUROLEAGUEBASKET > a:before {
+        height: 0.95em;
+        width: 0.56em;
+        left: 46px;
+    }
+
+    .menu > li.MMA > a:before {
+        height: 0.95em;
+        width: 0.56em;
+        left: 46px;
+    }
+
+    .menu > li.WNBA > a:before {
+        height: 0.95em;
+        width: 0.56em;
+        left: 46px;
+    }
+
+    .menu > li.UEFA_SUPERCOPA > a:before {
+        height: 0.95em;
+        width: 0.56em;
+        left: 46px;
+    }
+}

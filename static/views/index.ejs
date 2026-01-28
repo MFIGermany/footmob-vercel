@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Football Live ⚽ | Futbol Gratis Online</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.football-live.it.com">
+    <meta name="title" content="Futbol Gratis en Vivo - Premier League, Bundesliga, Serie A, LaLiga y Más" />
+    <meta name="description" content="Futbol gratis en vivo, Premier League, Bundesliga, Serie A, LaLiga, Ligue 1, UEFA Champions League, entre otros eventos deportivos.">
+    <meta name="keywords" content="Futbol en vivo, champions, uefa, clubs, real madrid, barcelona, manchester city, liverpool, bayern">
+    <meta name="distribution" content="global" />
+    <meta name="author" content="Foobal Live" />
+    <meta name="referrer" content="always" />
+    <meta name="robots" content="all" />
+    <link rel="icon" href="/img/favicon.ico" type="image/ico">
+    <link href="/css/header.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/matches.css" rel="stylesheet" type="text/css">
+    <% if(data.matchesRD.length > 0)  { %>
+        <link href="/css/rdhd.css" rel="stylesheet" type="text/css">
+    <% } %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G2193Y7XNZ"></script>
+<% if (user) { %>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<% } %>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G2193Y7XNZ');
+</script>
+<body>
+    <%- include('partials/menu', { active: 'home' }) %>
+    <div id="container" class="view_matches">        
+        <div id="left-column">
+            <input type="hidden" id="ready" value="<%= data.ready %>"/>
+            <% if (user) { %>
+            <div class="recaptcha">
+                <% if (data.ready == false) { %>
+                <div id="timer"></div>
+                <% }else{ %>
+                <div class="form-recaptcha" style="display:block;">
+                    <form id="form_monero">
+                        <div class="g-recaptcha" data-sitekey="<%= data.recaptcha %>" data-action="LOGIN"></div>
+                        <input type="submit" class="btn btn-info btn-sm fs-sm rounded order-lg-3 d-none d-lg-inline-flex" value="Reclamar">
+                    </form>
+                </div>
+                <% } %>
+            </div>
+            <% } %>
+            <!-- Anuncios de visualización -->
+            <a href="https://chromewebstore.google.com/detail/football-live/pdehjnikdhecaajakdgdoflodnbedfim" aria-label="Descargue nuestra extensión" target="_blank">
+                <img id="mini" src="./img/miniatura.webp" alt="mini_footlive" style="width:100%;"/>
+            </a>
+            <!-- Anuncios de visualización -->
+            <div id="ads_left"></div>
+        </div>
+        <div id="center-column">
+            <div class="channels">
+                <a id="list1" href="#" onclick="showChannels(1)" class="selected">Lista 1</a>
+                <a id="list2" href="#" onclick="showChannels(2)">Lista 2</a>
+                <!--<a id="list3" href="#" onclick="showChannels(3)">Lista 3</a>-->
+            </div>
+            <p class="usevpn">En caso de que su proveedor de internet limite el acceso a nuestros canales, le recomendamos utilizar un servicio VPN. No solo podrá acceder sin restricciones, también contribuirá a proteger su información personal.</p>
+            <!--
+            <div class="extension">
+                <label class="text_link">Obten nuestra extensión:</label>
+                <a href="https://chromewebstore.google.com/detail/football-live/pdehjnikdhecaajakdgdoflodnbedfim" target="_blank">
+                    <img src="./img/chrome_store.png" width="32" height="32" alt=""/>
+                </a>
+            </div>-->
+            <div id="channels1">
+                <% if(data.matchesPE.length > 0)  { %>
+                <ul class="menu matchesPE">
+                <% for (let i = 0; i < data.matchesPE.length; i++) { %>
+                    <li>
+                        <a href="#" class="enlace"><%= data.matchesPE[i].name %><span class="t"><%= data.matchesPE[i].time %></span>
+                            <img src="<%= data.matchesPE[i].flag %>" alt="flag" width="45" heigth="26.5" loading="lazy" class="imgtan">
+                        </a>
+                        <ul style="display: none;">
+                        <% for (let j = 0; j < data.matchesPE[i].channels.length; j++) { %>
+                            <li class="subitem1">
+                                <a href="<%= data.matchesPE[i].channels[j].url %>" target="_blank"><%= data.matchesPE[i].channels[j].name %></a>
+                            </li>
+                        <% } %>
+                        </ul>
+                    </li>
+                <% } %>
+                </ul>
+                <% } else if(data.matchesRD.length > 0)  { %>
+                    <ul class="menu matchesRD">
+                    <% for (let i = 0; i < data.matchesRD.length; i++) { %>
+                        <li class="<%= data.matchesRD[i].country %>">
+                            <a href="#"><%= data.matchesRD[i].name %><span class="t"><%= data.matchesRD[i].time %></span></a>
+                            <ul style="display: none;">
+                            <% for (let j = 0; j < data.matchesRD[i].channels.length; j++) { %>
+                                <li class="subitem1">
+                                    <a href="<%= data.matchesRD[i].channels[j].url %>" target="_blank"><%= data.matchesRD[i].channels[j].name %></a>
+                                </li>
+                            <% } %>
+                            </ul>
+                        </li>
+                    <% } %>
+                    </ul>
+                <% } else { %>
+                    <div class="wait-program">
+                        <h3>ESPERANDO CONFIRMACIÓN DE PARTIDOS PARA HOY</h3>
+                    </div>
+                <% } %>                
+            </div>
+            <div id="channels2" class="invisible">
+                <% if(data.matches.length > 0)  { %>
+                <ul class="menu">
+                <% for (let i = 0; i < data.matches.length; i++) { %>
+                    <li class="<%= data.matches[i].country %>">
+                        <a href="#"><%= data.matches[i].name %><span class="t"><%= data.matches[i].time %></span></a>
+                        <ul style="display: none;">
+                            <% for (let j = 0; j < data.matches[i].channels.length; j++) { %>
+                                <li class="subitem1">
+                                    <a href="<%= data.matches[i].channels[j].url %>" target="_blank"><%= data.matches[i].channels[j].name %></a>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </li>
+                <% } %>
+                </ul>
+                <% } else { %>
+                <div class="wait-program">
+                    <h3>ESPERANDO CONFIRMACIÓN DE PARTIDOS PARA HOY</h3>
+                </div>
+                <% } %>
+            </div>
+            <!--
+            <div id="channels3" class="invisible">
+                <% if(data.matches.length > 0)  { %>
+                <ul class="menu">
+                <% for (let i = 0; i < data.matches.length; i++) { %>
+                    <li class="<%= data.matches[i].country %>">
+                        <a href="#"><%= data.matches[i].name %><span class="t"><%= data.matches[i].time %></span></a>
+                        <ul style="display: none;">
+                            <% for (let j = 0; j < data.matches[i].channels.length; j++) { %>
+                                <li class="subitem1">
+                                    <a href="<%= data.matches[i].channels[j].url %>" target="_blank"><%= data.matches[i].channels[j].name %></a>
+                                </li>
+                            <% } %>
+                        </ul>
+                    </li>
+                <% } %>
+                </ul>
+                <% } else { %>
+                <div class="wait-program">
+                    <h3>ESPERANDO CONFIRMACIÓN DE PARTIDOS PARA HOY</h3>
+                </div>
+                <% } %>
+            </div>-->
+        </div>
+        <div id="right-column">
+            <%- include('partials/column-right') %>
+            <!-- Anuncios de visualización -->            
+            <div id="ads_right"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        var ready = document.getElementById('ready').value;
+        const TIMER_DURATION = 5 * 60 * 1000; // 5 minutos en milisegundos
+        const TIMER_KEY = 'timerEndTime'; // Clave para guardar el tiempo en localStorage
+
+        window.onload = () => {
+            //Reclamar monero
+            if(ready == 'true'){
+                document.getElementById('form_monero').onsubmit = function(e){
+                    e.preventDefault();
+
+                    //Get captcha response
+                    var formData = new FormData(document.getElementById('form_monero'));
+                    var captchaResponse = formData.get('g-recaptcha-response');
+                    const data = { token: captchaResponse };
+
+                    try {
+                        const response = fetch("/getmonero", {
+                        method: 'POST', // Método HTTP
+                        headers: {
+                            'Content-Type': 'application/json', // Especifica que los datos son JSON
+                        },
+                            body: JSON.stringify(data), // Convierte el objeto `data` a una cadena JSON
+                        }).then((res) => res.json())
+                        .then((data) => {
+                            Swal.fire({
+                                icon: data.type, // success, error, warning, info, question
+                                title: data.message,
+                                timer: 2000,
+                                showConfirmButton: false,
+                                position: 'top-end',
+                                toast: true
+                            }).then(() => {
+                                if(data.type == 'success')
+                                    window.location.reload();
+                            })
+                        })
+                    } catch (error) {
+                        console.log('Error sending data:', error.message)
+                    }
+                }
+            }
+            else{
+                function startTimer(duration, display) {
+                    const now = Date.now();
+                    let endTime;
+
+                    // Verificar si ya hay un tiempo guardado
+                    const savedEndTime = localStorage.getItem(TIMER_KEY);
+                    if (savedEndTime) {
+                        endTime = parseInt(savedEndTime, 10);
+                    } else {
+                        endTime = now + duration;
+                        localStorage.setItem(TIMER_KEY, endTime); // Guardar el tiempo final
+                    }
+
+                    function updateTimer() {
+                        const remainingTime = endTime - Date.now();
+
+                        if (remainingTime <= 0) {
+                            // Timer completado
+                            clearInterval(timerInterval);
+                            localStorage.removeItem(TIMER_KEY); // Eliminar el valor al finalizar
+                            display.textContent = "¡LISTO! Actualiza la página.";
+                        } else {
+                            const minutes = Math.floor((remainingTime / 1000 / 60) % 60);
+                            const seconds = Math.floor((remainingTime / 1000) % 60);
+                            display.textContent = `Próximo reclamo: ${minutes}m ${seconds}s`;
+                        }
+                    }
+
+                    // Actualizar el timer cada segundo
+                    const timerInterval = setInterval(updateTimer, 1000);
+                    updateTimer(); // Llamar inmediatamente al inicio
+                }
+            }
+
+            const timerDisplay = document.getElementById("timer");
+            if(timerDisplay)
+                startTimer(TIMER_DURATION, timerDisplay);
+        };
+
+        // Obtener todos los elementos li del menú
+        const itemsLi = document.querySelectorAll('.menu li');
+
+        // Iterar sobre cada elemento li
+        itemsLi.forEach(function(item) {
+            // Agregar un evento de clic a cada elemento li
+            item.addEventListener('click', function() {
+                // Obtener el elemento ul hijo del elemento li actual
+                let ul = this.querySelector('ul');
+
+                // Comprobar si el elemento ul está visible
+                if (ul.style.display === 'none') {
+                    // Si está oculto, mostrarlo
+                    ul.style.display = 'block';
+                } else {
+                    // Si está visible, ocultarlo
+                    ul.style.display = 'none';
+                }
+            });
+        });
+
+        function ajustarHoraCliente(horaServidor) {
+            try {
+                // Obtener la fecha y hora actual del cliente
+                var fechaCliente = new Date();
+
+                // Obtener la diferencia en minutos entre la hora local y UTC
+                var diferenciaHorarioCliente = fechaCliente.getTimezoneOffset();
+
+                // Ajustar la hora del servidor según la zona horaria del cliente
+                var ajusteHorario = (diferenciaHorarioCliente < 0) ? -Math.abs(diferenciaHorarioCliente) / 60 : Math.abs(diferenciaHorarioCliente) / 60;
+
+                //var diferencia = Math.abs(22) - Math.abs(ajusteHorario);
+                var diferencia = Math.abs(5) - Math.abs(ajusteHorario);
+                
+                // Crear un objeto de fecha y hora para la hora inicial pasada como parámetro
+                var horaInicial = new Date();
+                
+                var [horas, minutos] = horaServidor.split(':').map(Number); // Separar las horas y minutos de la hora pasada como parámetro
+                horaInicial.setHours(horas, minutos, 0, 0); // Establecer la hora según la hora pasada como parámetro
+
+                // Sumar las horas especificadas
+                horaInicial.setHours(horaInicial.getHours() + diferencia);
+
+                // Obtener la hora sumada en formato de 24 horas
+                var horaFormateada = horaInicial.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
+
+                return horaFormateada;
+            } catch (error) {
+                console.error('Error en ajustarHoraCliente():', error.message);
+                return horaServidor; // Devolver la hora del servidor sin cambios en caso de error
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            // Obtener todos los elementos con la clase 't' (donde se muestra la hora)
+            const timeElements = document.querySelectorAll('.t');
+            
+            // Recorrer cada elemento y ajustar la hora según la zona horaria del cliente
+            timeElements.forEach((element) => {
+                // Obtener la hora del servidor desde el contenido del elemento
+                const horaServidor = element.textContent.trim();
+                
+                // Ajustar la hora del servidor según la zona horaria del cliente
+                const horaCliente = ajustarHoraCliente(horaServidor);
+                
+                // Actualizar el contenido del elemento con la hora ajustada
+                element.textContent = horaCliente;
+            });
+        });
+
+        function showChannels(channel){
+            const list_channel1 = document.getElementById('channels1');
+            const list_channel2 = document.getElementById('channels2');
+            //const list_channel3 = document.getElementById('channels3');
+            const list1 = document.getElementById('list1');
+            const list2 = document.getElementById('list2');
+            //const list3 = document.getElementById('list3');
+
+            if(channel == 1){
+                list_channel1.classList.remove('invisible');
+                list_channel2.classList.add('invisible');
+                //list_channel3.classList.add('invisible');
+                list1.classList.add('selected');
+                list2.classList.remove('selected');
+               // list3.classList.remove('selected');
+            }
+            else if(channel == 2){
+                list_channel1.classList.add('invisible');
+                list_channel2.classList.remove('invisible');
+                //list_channel3.classList.add('invisible');
+                list1.classList.remove('selected');
+                list2.classList.add('selected');
+                //list3.classList.remove('selected');
+            }
+            else{
+                list_channel1.classList.add('invisible');
+                list_channel2.classList.add('invisible');
+                //list_channel3.classList.remove('invisible');
+                list1.classList.remove('selected');
+                list2.classList.remove('selected');
+                //list3.classList.add('selected');
+            }
+        }
+
+        //Slides
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelector('.slides');
+            const images = document.querySelectorAll('.slides img');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+
+            let index = 0;
+
+            function showSlide(i) {
+                if (i >= images.length) {
+                    index = 0;
+                } else if (i < 0) {
+                    index = images.length - 1;
+                } else {
+                    index = i;
+                }
+                slides.style.transform = `translateX(${-index * 100}%)`;
+            }
+
+            prevButton.addEventListener('click', function() {
+                showSlide(index - 1);
+            });
+
+            nextButton.addEventListener('click', function() {
+                showSlide(index + 1);
+            });
+
+            // Auto play functionality (optional)
+            setInterval(function() {
+                showSlide(index + 1);
+            }, 4000); // Change image every 4 seconds
+        });
+    </script>
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js" async></script>
+    <script type="text/javascript">
+        document.getElementById('aclib').addEventListener('load', function() {
+            console.log('load aclib');
+            aclib.runAutoTag({
+                zoneId: 'bjpdg8rj4a',
+            });
+
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_left'
+            });
+
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_right'
+            });
+        });
+    </script>
+</body>
+</html>

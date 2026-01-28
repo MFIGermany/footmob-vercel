@@ -1,0 +1,35 @@
+{
+  "name": "footmob",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+	"start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Yoenry vanega Hechavarria",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "compression": "1.7.4",
+    "cookie-session": "^2.1.0",
+    "cors": "2.8.5",
+    "country-iso-2-to-3": "^1.1.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.1",
+    "jsdom": "24.0.0",
+    "method-override": "^3.0.0",
+    "mysql2": "^3.11.3",
+    "node-fetch": "3.3.2",
+    "nodemon": "3.1.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "request": "^2.88.2"
+  }
+}

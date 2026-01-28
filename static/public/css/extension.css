@@ -1,0 +1,90 @@
+.KgGEHd {
+    align-items: center;
+    color: inherit;
+    display: flex;
+    margin-bottom: 16px;
+}
+.rBxtY {
+    border-radius: 8px;
+    height: 60px;
+    margin-right: 16px;
+    width: 60px;
+}
+.Pa2dE {
+    font-family: "Google Sans";
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 2.5rem;
+    font-weight: 700;
+    line-height: 41px;
+    margin: initial;
+}
+.aboutContainer {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+}
+.aboutContainer h1, .aboutContainer p {
+    padding-right: 5px;
+    margin: 0;
+}
+.aboutContainer h2 {
+    font-family: "Google Sans";
+    margin-bottom: 5px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+}
+li {
+    margin-bottom: 5px;
+}
+section {
+    margin-bottom: 20px;
+}
+#title_monero{
+    margin-top:8px;
+}
+#info{
+    margin: -10px 0 12px;
+    font-size: 13px;
+    color: #000;
+}
+.w3-text-black, .w3-hover-text-black:hover {
+    color: #000 !important;
+}
+
+.w3-table-all {
+    border: 1px solid #ccc;
+}
+.w3-table, .w3-table-all {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    display: table;
+}
+.w3-table-all tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.w3-bordered tr, .w3-table-all tr {
+    border-bottom: 1px solid #ddd;
+}
+.w3-theme {
+    color: #1f292d !important;
+    background-color: #607d8b !important;
+}
+.w3-table th:first-child, .w3-table td:first-child, .w3-table-all th:first-child, .w3-table-all td:first-child {
+    padding-left: 16px;
+}
+.w3-table td, .w3-table th, .w3-table-all td, .w3-table-all th {
+    padding: 8px 8px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: top;
+}

@@ -1,0 +1,28 @@
+body {
+    color: #fff;
+    margin: auto;
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+.title-article{
+	margin: 3px 0;
+    font-size: 1em;
+    color:var(--theme-default-text, rgba(51,51,51,1.0));
+}
+.article {
+    padding-bottom: 20px;
+    height: 170px;
+    margin: 10px;
+}
+.article_promo{
+	padding-bottom: 10px;
+    height: 100px;
+    margin: 10px;
+}
+.newsContainer article {
+    border-bottom: 1px solid #ccc;
+}
+.newsContainer article:last-child{
+	margin-bottom: 0;
+}
+.navbar a:link{text-decoration:none;color:#fff}
+.navbar a:visited{text-decoration:none;color:#fff}

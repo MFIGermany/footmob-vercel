@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Football Live ⚽ | Monedero: Football Live</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monero es una criptomoneda privada, segura y no rastreable, diseñada para proteger tu privacidad en cada transacción.">
+    <meta name="keywords" content="Disfruta de los mejores canales de fútbol y gana Monero al mismo tiempo. Reclama satoshis, apuesta virtualmente, y acumula en tu balance.">
+    <link rel="icon" href="/img/favicon.ico" type="image/ico">
+	<link rel="canonical" href="https://www.football-live.it.com/footlive/monedero">
+    <link href="/css/header.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/news.css" rel="stylesheet" type="text/css">
+    <link href="/css/extension.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G2193Y7XNZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G2193Y7XNZ');
+</script>
+<body>
+    <%- include('partials/menu', { active: '' }) %>
+    <div id="container" class="view_matches">        
+        <div id="left-column">
+            <!-- Anuncios de visualización -->
+            <a href="https://chromewebstore.google.com/detail/football-live/pdehjnikdhecaajakdgdoflodnbedfim" target="_blank">
+                <img id="mini" src="../img/miniatura.webp" alt="mini_footlive" style="width:100%;"/>
+            </a>
+            <!-- Anuncios de visualización -->
+            <div id="ads_left"></div>
+        </div>
+        <div id="center-column">
+            <div class="aboutContainer">                
+                <section id="description">
+                    <a target="_blank" href="https://getmonero.org">
+                        <img src="../img/monero.png" alt="Logo de Monero">
+                    </a>
+                    <p id="title_monero">Ingresa la dirección de tu monedero donde podrás retirar tus monedas; si aún no tienes una, puedes crearla fácilmente utilizando cualquiera de estas plataformas: <a href="https://www.exodus.com/" target="_blank">Exodus Wallet</a> o <a href="https://www.mymonero.com/" target="_blank">MyMonero</a>. Por favor, revisa la dirección de tu billetera ya que los retiros enviados a una dirección incorrecta no se pueden revertir.</p>
+                </section>
+                <section id="features">
+                    <h4 class="withdraw">Dirección de monedero</h4>
+                    <form id="form_wallet">
+                        <input id="monedero" name="monedero" class="w3-input w3-input-wallet" type="text" value="<%= user.billetera %>" />
+                        <button id="btn-save" class="btn-withdraw">Guardar</button>
+                    </form>
+                    <br><br><br>
+                </section>
+                <section id="team">
+                    <div class="w3-row-padding">
+                        <div class="w3-half w3-border w3-round-large w3-border-blue w3-padding">
+                            <h4 class="withdraw">Retirar a su monedero regular</h4>
+                            <form id="form_withdraw" class="form-amount">
+                                <input id="amount" name="amount" class="w3-input" type="number" step="0.00000001" min="0.00500000" max="<%= user.balance %>" value="0.00500000">
+                                <button id="btn-withdraw" class="btn-withdraw">Retirar</button>
+                            </form><br>
+                            <small>
+                                <span class="w3-text-blue">Su Balance: <a href="#" onclick="document.getElementById('amount').value = '<%= user.balance %>';"><%= user.balance %> XMR</a></span>
+                                <br>Min. Retiro: 0.00500000 XMR<br>
+                                <span class="w3-text-green">Por favor, revise su dirección antes de solicitar el retiro de su saldo.</span><br>
+                                <span class="w3-text-green">Puede demorar entre 5 minutos y hasta 48 horas en llegar a su billetera, tenga paciencia.</span>
+                            </small>
+                        </div>
+                    </div><br>
+                </section>
+                <section id="withdraws">
+                    <h3 class="withdraw">Últimas transacciones y retiros</h3>
+                    <div class="w3-responsive">
+                        <table class="w3-table w3-table-all w3-text-black">
+                            <thead>
+                                <tr class="w3-theme w3-opacity">
+                                    <th scope="col">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Fecha</font>
+                                        </font>
+                                    </th>
+                                    <th scope="col">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Cantidad</font>
+                                        </font>
+                                    </th>
+                                    <th scope="col">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Estado</font>
+                                        </font>
+                                    </th>
+                                    <th scope="col">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Transacción</font>
+                                        </font>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for (let i = 0; i < data.withdraws.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <font style="vertical-align: inherit;">
+                                            <% const fecha = new Date(data.withdraws[i].fecha); %>
+                                            <font style="vertical-align: inherit;">
+                                                <%= fecha.toLocaleDateString("es-ES", { 
+                                                    day: "2-digit", 
+                                                    month: "long", 
+                                                    year: "numeric" 
+                                                }) %>
+                                            </font>
+                                        </font>
+                                    </td>
+                                    <td>
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;"><%= data.withdraws[i].cantidad %> XMR</font>
+                                        </font>
+                                    </td>
+                                    <td>
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">
+                                                <% if (data.withdraws[i].estado) { %>
+                                                    <span class="status-green">Completado</span>
+                                                <% } else { %>
+                                                    <span class="status-red">Pendiente</span>
+                                                <% } %>
+                                            </font>
+                                        </font>
+                                    </td>
+                                    <td>
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">
+                                                <% if (data.withdraws[i].transaccion_id) { %>
+
+                                                <% } %> 
+                                            </font>
+                                        </font>
+                                    </td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div id="right-column">
+            <%- include('partials/column-right') %>
+            <!-- Anuncios de visualización -->            
+            <div id="ads_right"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById('form_wallet').onsubmit = function(e){
+            e.preventDefault();
+
+            var dir = document.getElementById('monedero').value;
+            const data = { wallet: dir };
+
+            try {
+                const response = fetch("/savedir", {
+                method: 'POST', // Método HTTP
+                headers: {
+                    'Content-Type': 'application/json', // Especifica que los datos son JSON
+                },
+                    body: JSON.stringify(data), // Convierte el objeto `data` a una cadena JSON
+                }).then((res) => res.json())
+                .then((data) => {
+                    Swal.fire({
+                        icon: data.type, // success, error, warning, info, question
+                        title: data.message,
+                        timer: 2000,
+                        showConfirmButton: false,
+                        position: 'top-end',
+                        toast: true
+                    }).then(() => {
+                        if(data.type == 'success')
+                            window.location.reload();
+                        else
+                            document.getElementById('monedero').value = '';
+                    })
+                })
+            } catch (error) {
+                console.log('Error sending data:', error.message)
+            }
+        }
+
+        document.getElementById('form_withdraw').onsubmit = function(e){
+            e.preventDefault();
+
+            var amount = document.getElementById('amount').value;
+            const data = { amount: amount };
+
+            try {
+                const response = fetch("/withdraw", {
+                method: 'POST', // Método HTTP
+                headers: {
+                    'Content-Type': 'application/json', // Especifica que los datos son JSON
+                },
+                    body: JSON.stringify(data), // Convierte el objeto `data` a una cadena JSON
+                }).then((res) => res.json())
+                .then((data) => {
+                    Swal.fire({
+                        icon: data.type, // success, error, warning, info, question
+                        title: data.message,
+                        timer: 2000,
+                        showConfirmButton: false,
+                        position: 'top-end',
+                        toast: true
+                    }).then(() => {
+                        if(data.type == 'success')
+                            window.location.reload();
+                    })
+                })
+            } catch (error) {
+                console.log('Error sending data:', error.message)
+            }
+        }
+        //Slides
+        document.addEventListener('DOMContentLoaded', function() {            
+            const slides = document.querySelector('.slides');
+            const images = document.querySelectorAll('.slides img');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+
+            let index = 0;
+
+            function showSlide(i) {
+                if (i >= images.length) {
+                    index = 0;
+                } else if (i < 0) {
+                    index = images.length - 1;
+                } else {
+                    index = i;
+                }
+                slides.style.transform = `translateX(${-index * 100}%)`;
+            }
+
+            prevButton.addEventListener('click', function() {
+                showSlide(index - 1);
+            });
+
+            nextButton.addEventListener('click', function() {
+                showSlide(index + 1);
+            });
+
+            // Auto play functionality (optional)
+            setInterval(function() {
+                showSlide(index + 1);
+            }, 4000); // Change image every 4 seconds
+        });
+    </script>
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js" async></script>
+    <script type="text/javascript">
+        document.getElementById('aclib').addEventListener('load', function() {
+            console.log('load aclib');
+            aclib.runAutoTag({
+                zoneId: 'bjpdg8rj4a',
+            });
+
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_left'
+            });
+
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_right'
+            });
+        });
+    </script>
+</body>
+</html>

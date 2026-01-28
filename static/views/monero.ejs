@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Football Live ⚽ | Gane Monero: Football Live</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monero es una criptomoneda privada, segura y no rastreable, diseñada para proteger tu privacidad en cada transacción.">
+    <meta name="keywords" content="Disfruta de los mejores canales de fútbol y gana Monero al mismo tiempo. Reclama satoshis, apuesta virtualmente, y acumula en tu balance.">
+    <link rel="icon" href="/img/favicon.ico" type="image/ico">
+	<link rel="canonical" href="https://www.football-live.it.com/footlive/monero">
+    <link href="/css/header.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/news.css" rel="stylesheet" type="text/css">
+    <link href="/css/extension.css" rel="stylesheet" type="text/css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G2193Y7XNZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G2193Y7XNZ');
+</script>
+<body>
+    <%- include('partials/menu', { active: 'monero' }) %>
+    <div id="container" class="view_matches">        
+        <div id="left-column">
+            <!-- Anuncios de visualización -->
+            <a href="https://chromewebstore.google.com/detail/football-live/pdehjnikdhecaajakdgdoflodnbedfim" target="_blank">
+                <img id="mini" src="../img/miniatura.webp" alt="mini_footlive" style="width:100%;"/>
+            </a>
+            <!-- Anuncios de visualización -->
+            <div id="ads_left"></div>
+        </div>
+        <div id="center-column">
+            <div class="aboutContainer">                
+                <section id="description">
+                    <a target="_blank" href="https://getmonero.org">
+                        <img src="../img/monero.png" alt="Logo de Monero">
+                    </a>
+                    <p id="title_monero">Monero es una criptomoneda privada, segura y no rastreable, diseñada para proteger tu privacidad en cada transacción. Se puede intercambiar por bienes, servicios y otras monedas, de forma privada y con comisiones muy bajas.</p>
+                </section>
+                <section id="features">
+                    <h2 id="feature">¿Por qué Monero?</h2>
+                    <ul>
+                        <li><b id="result">-</b> <span id="sp_result">Ofrece total privacidad en las transacciones.</span></li>
+                        <li><b id="customize">-</b> <span id="sp_customize">Basado en la descentralización y seguridad.</span></li>
+                        <li><b id="interface">-</b> <span id="sp_interface">Ideal para usuarios que valoran su anonimato.</span></li>
+                    </ul>
+                    <a id="getmonero" href="https://getmonero.org" target="_blank" class="btn">Visite la página oficial de Monero para saber más...</a>
+                </section>
+                <section id="team">
+                    <h2 id="title_team">Gana Monero en Football Live</h2>
+                    <p><b id="developer">Login Diario:</b> Recibirá un bono por iniciar sesión cada día.</p>
+                    <p><b id="contact">Temporizador:</b> Puede reclamar Monero cada 5 minutos.</p>
+                    <p><b id="version">Apuestas Virtuales:</b> Adivine que equipo gana, pierde o empata, y gane Monero por cada acierto. (<span style="color:red;">Próximamente</span>)</p>
+                </section>
+                <section id="versions">
+                    <p>Disfruta de los mejores canales de fútbol y gana Monero al mismo tiempo. Reclama satoshis, apuesta virtualmente, y acumula en tu balance para usarlo como quieras.</p>
+                </section>
+                <!--<a href="https://chromewebstore.google.com/detail/football-live/pdehjnikdhecaajakdgdoflodnbedfim" target="_blank" class="btn btn-info btn-sm fs-sm rounded order-lg-3 d-none d-lg-inline-flex">Descargar Extensión</a>-->
+            </div>
+        </div>
+        <div id="right-column">
+            <%- include('partials/column-right') %>
+            <!-- Anuncios de visualización -->            
+            <div id="ads_right"></div>
+        </div>
+    </div>
+    <script>
+        //Slides
+        document.addEventListener('DOMContentLoaded', function() {            
+            const slides = document.querySelector('.slides');
+            const images = document.querySelectorAll('.slides img');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+
+            let index = 0;
+
+            function showSlide(i) {
+                if (i >= images.length) {
+                    index = 0;
+                } else if (i < 0) {
+                    index = images.length - 1;
+                } else {
+                    index = i;
+                }
+                slides.style.transform = `translateX(${-index * 100}%)`;
+            }
+
+            prevButton.addEventListener('click', function() {
+                showSlide(index - 1);
+            });
+
+            nextButton.addEventListener('click', function() {
+                showSlide(index + 1);
+            });
+
+            // Auto play functionality (optional)
+            setInterval(function() {
+                showSlide(index + 1);
+            }, 4000); // Change image every 4 seconds
+        });
+    </script>
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js" async></script>
+    <script type="text/javascript">
+        document.getElementById('aclib').addEventListener('load', function() {
+            console.log('load aclib');
+            aclib.runAutoTag({
+                zoneId: 'bjpdg8rj4a',
+            });
+
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_left'
+            });
+
+            aclib.runBanner({
+                zoneId: '9823490',
+                renderIn: '#ads_right'
+            });
+        });
+    </script>
+</body>
+</html>
