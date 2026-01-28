@@ -42,6 +42,23 @@ export const createApp = () => {
     saveUninitialized: true
   }))
 
+  function verifyExtensionToken(req, res, next) {
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader) {
+      return res.status(401).json({ error: "No token provided" });
+    }
+
+    const token = authHeader.split(" ")[1];
+
+    if (token !== process.env.API_TOKEN) {
+      return res.status(403).json({ error: "Invalid token" });
+    }
+
+    next();
+  }
+
+
   // Middleware para pasar usuario a todas las vistas
   app.use((req, res, next) => {
     res.locals.user = req.session.user || null;
@@ -78,7 +95,7 @@ export const createApp = () => {
 
   //Routes
   const URL = process.env.URL
-  app.use('/footlive', createFootMobRouter({ url: URL }))
+  app.use('/footlive', verifyExtensionToken, createFootMobRouter({ url: URL }))
   //app.use('/footlive', createUserRouter())
 
   app.get('/', (req, res) => {
